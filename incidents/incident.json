@@ -1,0 +1,9 @@
+{
+    "incident_id": "INC-001",
+    "type": "Brute Force Attack",
+    "severity": "High",
+    "source_ip": "192.168.1.100",
+    "target": "admin_account",
+    "failed_attempts": 150,
+    "description": "Multiple failed login attempts were detected against an administrator account."
+}

@@ -1,0 +1,124 @@
+[
+    {
+        "technique_id": "T1110",
+        "technique_name": "Brute Force",
+        "description": "Adversaries may use brute force techniques to gain access to accounts by systematically attempting passwords or other authentication information.",
+        "detection": "Multiple failed authentication attempts may indicate brute force activity.",
+        "response": [
+            "Temporarily lock or restrict the targeted account",
+            "Monitor the source IP address",
+            "Investigate authentication logs",
+            "Reset credentials if compromise is suspected",
+            "Enable or enforce multi-factor authentication"
+        ]
+    },
+    {
+        "technique_id": "T1110.001",
+        "technique_name": "Password Guessing",
+        "description": "Adversaries may attempt to gain access to accounts by repeatedly guessing passwords.",
+        "detection": "Repeated authentication failures targeting a specific account can indicate password guessing.",
+        "response": [
+            "Apply account lockout policies",
+            "Monitor authentication attempts",
+            "Investigate the source IP",
+            "Reset affected credentials"
+        ]
+    },
+    {
+        "technique_id": "T1566",
+        "technique_name": "Phishing",
+        "description": "Adversaries may use phishing techniques to obtain information or deliver malicious content through deceptive messages.",
+        "detection": "Suspicious emails, malicious links, or credential harvesting attempts may indicate phishing.",
+        "response": [
+            "Quarantine the suspicious email",
+            "Block the malicious URL or domain",
+            "Reset potentially compromised credentials",
+            "Investigate email and authentication logs"
+        ]
+    },
+    {
+        "technique_id": "T1204.002",
+        "technique_name": "Malicious File",
+        "description": "Adversaries may rely on users executing malicious files to compromise systems.",
+        "detection": "Execution of suspicious or malicious files on an endpoint may indicate compromise.",
+        "response": [
+            "Isolate the affected workstation",
+            "Investigate the suspicious file",
+            "Perform malware analysis",
+            "Check endpoint logs"
+        ]
+    },
+    {
+        "technique_id": "T1486",
+        "technique_name": "Data Encrypted for Impact",
+        "description": "Adversaries may encrypt data to interrupt availability and cause operational impact.",
+        "detection": "Rapid encryption or modification of multiple files may indicate ransomware activity.",
+        "response": [
+            "Isolate affected systems",
+            "Stop suspicious processes",
+            "Investigate affected files",
+            "Preserve forensic evidence",
+            "Recover systems from clean backups"
+        ]
+    },
+    {
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Adversaries may exploit vulnerabilities in Internet-facing applications to gain access to systems.",
+        "detection": "Suspicious requests or exploitation patterns targeting web applications may indicate exploitation.",
+        "response": [
+            "Block the malicious source",
+            "Investigate application logs",
+            "Patch the vulnerable application",
+            "Review affected systems"
+        ]
+    },
+    {
+        "technique_id": "T1498",
+        "technique_name": "Network Denial of Service",
+        "description": "Adversaries may perform denial-of-service attacks to prevent users from accessing targeted resources.",
+        "detection": "Abnormally high volumes of network traffic may indicate a denial-of-service attack.",
+        "response": [
+            "Rate-limit suspicious traffic",
+            "Block malicious sources where appropriate",
+            "Enable DDoS protection",
+            "Monitor network traffic"
+        ]
+    },
+    {
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "Adversaries may exploit software vulnerabilities to obtain higher-level privileges.",
+        "detection": "Unexpected privilege changes or exploitation activity may indicate privilege escalation.",
+        "response": [
+            "Disable or restrict the affected account",
+            "Investigate privilege changes",
+            "Patch vulnerable software",
+            "Review authentication and system logs"
+        ]
+    },
+    {
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Adversaries may steal data by transferring it over an existing command and control channel.",
+        "detection": "Unexpected transfers of sensitive data to external destinations may indicate data exfiltration.",
+        "response": [
+            "Block suspicious outbound connections",
+            "Investigate network traffic",
+            "Identify the affected data",
+            "Contain the compromised system"
+        ]
+    },
+    {
+        "technique_id": "T1046",
+        "technique_name": "Network Service Scanning",
+        "description": "Adversaries may scan systems to identify available services and potential attack targets.",
+        "detection": "Repeated connection attempts across many ports or systems may indicate network scanning.",
+        "response": [
+            "Monitor the scanning source",
+            "Block suspicious traffic where appropriate",
+            "Investigate network logs",
+            "Review exposed services"
+        ]
+    }
+]

@@ -1,0 +1,311 @@
+[
+    {
+        "incident_id": "INC-001",
+        "type": "Brute Force Attack",
+        "severity": "High",
+        "source_ip": "192.168.1.100",
+        "target": "admin_account",
+        "failed_attempts": 150,
+        "description": "Multiple failed login attempts were detected against an administrator account.",
+        "expected_mitre_techniques": ["T1110"]
+    },
+    {
+        "incident_id": "INC-002",
+        "type": "Brute Force Attack",
+        "severity": "Medium",
+        "source_ip": "192.168.1.101",
+        "target": "vpn_account",
+        "failed_attempts": 75,
+        "description": "Repeated failed VPN authentication attempts were detected from a single external source.",
+        "expected_mitre_techniques": ["T1110"]
+    },
+    {
+        "incident_id": "INC-003",
+        "type": "Brute Force Attack",
+        "severity": "Critical",
+        "source_ip": "203.0.113.15",
+        "target": "domain_admin",
+        "failed_attempts": 220,
+        "description": "A large number of authentication failures targeted a domain administrator account.",
+        "expected_mitre_techniques": ["T1110"]
+    },
+
+    {
+        "incident_id": "INC-004",
+        "type": "Password Guessing",
+        "severity": "Medium",
+        "source_ip": "192.168.1.102",
+        "target": "user_account",
+        "failed_attempts": 60,
+        "description": "Repeated authentication failures were detected against a user account.",
+        "expected_mitre_techniques": ["T1110.001"]
+    },
+    {
+        "incident_id": "INC-005",
+        "type": "Password Guessing",
+        "severity": "High",
+        "source_ip": "203.0.113.25",
+        "target": "employee_account",
+        "failed_attempts": 90,
+        "description": "An external host repeatedly attempted different passwords against an employee account.",
+        "expected_mitre_techniques": ["T1110.001"]
+    },
+    {
+        "incident_id": "INC-006",
+        "type": "Password Guessing",
+        "severity": "Low",
+        "source_ip": "192.168.1.103",
+        "target": "test_account",
+        "failed_attempts": 20,
+        "description": "Several incorrect password attempts were observed against a test account.",
+        "expected_mitre_techniques": ["T1110.001"]
+    },
+
+    {
+        "incident_id": "INC-007",
+        "type": "Phishing Attack",
+        "severity": "High",
+        "source_ip": "203.0.113.10",
+        "target": "employee_email",
+        "failed_attempts": 0,
+        "description": "A suspicious email containing a credential harvesting link was reported by an employee.",
+        "expected_mitre_techniques": ["T1566"]
+    },
+    {
+        "incident_id": "INC-008",
+        "type": "Phishing Attack",
+        "severity": "Medium",
+        "source_ip": "203.0.113.11",
+        "target": "finance_employee",
+        "failed_attempts": 0,
+        "description": "An employee received a deceptive email directing them to a fake company login page.",
+        "expected_mitre_techniques": ["T1566"]
+    },
+    {
+        "incident_id": "INC-009",
+        "type": "Phishing Attack",
+        "severity": "Critical",
+        "source_ip": "203.0.113.12",
+        "target": "administrator_email",
+        "failed_attempts": 0,
+        "description": "A targeted phishing message attempted to obtain privileged account credentials.",
+        "expected_mitre_techniques": ["T1566"]
+    },
+
+    {
+        "incident_id": "INC-010",
+        "type": "Malware Infection",
+        "severity": "Critical",
+        "source_ip": "192.168.1.120",
+        "target": "employee_workstation",
+        "failed_attempts": 0,
+        "description": "Malicious software was detected executing on an employee workstation.",
+        "expected_mitre_techniques": ["T1204.002"]
+    },
+    {
+        "incident_id": "INC-011",
+        "type": "Malware Infection",
+        "severity": "High",
+        "source_ip": "192.168.1.121",
+        "target": "engineering_workstation",
+        "failed_attempts": 0,
+        "description": "A user executed a suspicious executable downloaded from an untrusted source.",
+        "expected_mitre_techniques": ["T1204.002"]
+    },
+    {
+        "incident_id": "INC-012",
+        "type": "Malware Infection",
+        "severity": "Medium",
+        "source_ip": "192.168.1.122",
+        "target": "sales_workstation",
+        "failed_attempts": 0,
+        "description": "A suspicious attachment was opened by a user and malicious code subsequently executed on the workstation.",
+        "expected_mitre_techniques": ["T1204.002"]
+    },
+
+    {
+        "incident_id": "INC-013",
+        "type": "Ransomware Attack",
+        "severity": "Critical",
+        "source_ip": "192.168.1.130",
+        "target": "file_server",
+        "failed_attempts": 0,
+        "description": "Multiple files on a server were detected being rapidly encrypted by suspicious software.",
+        "expected_mitre_techniques": ["T1486"]
+    },
+    {
+        "incident_id": "INC-014",
+        "type": "Ransomware Attack",
+        "severity": "Critical",
+        "source_ip": "192.168.1.131",
+        "target": "database_server",
+        "failed_attempts": 0,
+        "description": "Database files were rapidly encrypted and became inaccessible to legitimate users.",
+        "expected_mitre_techniques": ["T1486"]
+    },
+    {
+        "incident_id": "INC-015",
+        "type": "Ransomware Attack",
+        "severity": "High",
+        "source_ip": "192.168.1.132",
+        "target": "shared_storage",
+        "failed_attempts": 0,
+        "description": "A large number of documents on shared storage were encrypted within a short period.",
+        "expected_mitre_techniques": ["T1486"]
+    },
+
+    {
+        "incident_id": "INC-016",
+        "type": "SQL Injection",
+        "severity": "High",
+        "source_ip": "203.0.113.20",
+        "target": "web_application",
+        "failed_attempts": 0,
+        "description": "Suspicious SQL queries containing injection patterns were detected in web application requests.",
+        "expected_mitre_techniques": ["T1190"]
+    },
+    {
+        "incident_id": "INC-017",
+        "type": "SQL Injection",
+        "severity": "Critical",
+        "source_ip": "203.0.113.21",
+        "target": "customer_portal",
+        "failed_attempts": 0,
+        "description": "An attacker submitted crafted database queries through a public-facing customer portal.",
+        "expected_mitre_techniques": ["T1190"]
+    },
+    {
+        "incident_id": "INC-018",
+        "type": "SQL Injection",
+        "severity": "Medium",
+        "source_ip": "203.0.113.22",
+        "target": "login_application",
+        "failed_attempts": 0,
+        "description": "Web requests containing suspicious SQL syntax were detected against an Internet-facing application.",
+        "expected_mitre_techniques": ["T1190"]
+    },
+
+    {
+        "incident_id": "INC-019",
+        "type": "DDoS Attack",
+        "severity": "High",
+        "source_ip": "203.0.113.30",
+        "target": "web_server",
+        "failed_attempts": 0,
+        "description": "A large volume of network requests was detected against a public web server.",
+        "expected_mitre_techniques": ["T1498"]
+    },
+    {
+        "incident_id": "INC-020",
+        "type": "DDoS Attack",
+        "severity": "Critical",
+        "source_ip": "203.0.113.31",
+        "target": "api_server",
+        "failed_attempts": 0,
+        "description": "The API server received an unusually large volume of traffic from distributed external sources.",
+        "expected_mitre_techniques": ["T1498"]
+    },
+    {
+        "incident_id": "INC-021",
+        "type": "DDoS Attack",
+        "severity": "Medium",
+        "source_ip": "203.0.113.32",
+        "target": "public_dns",
+        "failed_attempts": 0,
+        "description": "Abnormally high network traffic caused significant degradation of a public DNS service.",
+        "expected_mitre_techniques": ["T1498"]
+    },
+
+    {
+        "incident_id": "INC-022",
+        "type": "Privilege Escalation",
+        "severity": "Critical",
+        "source_ip": "192.168.1.140",
+        "target": "server_account",
+        "failed_attempts": 0,
+        "description": "A user account was detected attempting to obtain unauthorized administrative privileges.",
+        "expected_mitre_techniques": ["T1068"]
+    },
+    {
+        "incident_id": "INC-023",
+        "type": "Privilege Escalation",
+        "severity": "High",
+        "source_ip": "192.168.1.141",
+        "target": "application_server",
+        "failed_attempts": 0,
+        "description": "A process exploited a software vulnerability to obtain higher-level privileges on a server.",
+        "expected_mitre_techniques": ["T1068"]
+    },
+    {
+        "incident_id": "INC-024",
+        "type": "Privilege Escalation",
+        "severity": "Critical",
+        "source_ip": "192.168.1.142",
+        "target": "database_server",
+        "failed_attempts": 0,
+        "description": "Unexpected privilege changes indicated that a compromised account attempted to gain administrative access.",
+        "expected_mitre_techniques": ["T1068"]
+    },
+
+    {
+        "incident_id": "INC-025",
+        "type": "Data Exfiltration",
+        "severity": "Critical",
+        "source_ip": "192.168.1.150",
+        "target": "database_server",
+        "failed_attempts": 0,
+        "description": "A large amount of sensitive database information was detected being transferred to an external destination.",
+        "expected_mitre_techniques": ["T1041"]
+    },
+    {
+        "incident_id": "INC-026",
+        "type": "Data Exfiltration",
+        "severity": "High",
+        "source_ip": "192.168.1.151",
+        "target": "file_server",
+        "failed_attempts": 0,
+        "description": "Sensitive documents were transferred from an internal file server to an unauthorized external destination.",
+        "expected_mitre_techniques": ["T1041"]
+    },
+    {
+        "incident_id": "INC-027",
+        "type": "Data Exfiltration",
+        "severity": "Critical",
+        "source_ip": "192.168.1.152",
+        "target": "customer_database",
+        "failed_attempts": 0,
+        "description": "Large outbound transfers of customer records were detected from a compromised database system.",
+        "expected_mitre_techniques": ["T1041"]
+    },
+
+    {
+        "incident_id": "INC-028",
+        "type": "Port Scanning",
+        "severity": "Medium",
+        "source_ip": "203.0.113.40",
+        "target": "internal_network",
+        "failed_attempts": 0,
+        "description": "A remote host was detected scanning multiple ports across internal systems.",
+        "expected_mitre_techniques": ["T1046"]
+    },
+    {
+        "incident_id": "INC-029",
+        "type": "Port Scanning",
+        "severity": "Low",
+        "source_ip": "203.0.113.41",
+        "target": "web_servers",
+        "failed_attempts": 0,
+        "description": "A remote source repeatedly attempted connections to multiple ports on several web servers.",
+        "expected_mitre_techniques": ["T1046"]
+    },
+    {
+        "incident_id": "INC-030",
+        "type": "Port Scanning",
+        "severity": "High",
+        "source_ip": "203.0.113.42",
+        "target": "corporate_network",
+        "failed_attempts": 0,
+        "description": "A host generated connection attempts across many ports and systems within the corporate network.",
+        "expected_mitre_techniques": ["T1046"]
+    }
+]

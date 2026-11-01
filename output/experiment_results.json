@@ -1,0 +1,1247 @@
+{
+    "dataset_size": 30,
+    "experiments": {
+        "LLM Only": {
+            "json_validity": 100.0,
+            "mitre_exact_accuracy": 100.0,
+            "average_mitre_f1": 100.0,
+            "risk_consistency": "N/A",
+            "validation_rate": "N/A",
+            "average_generation_time": 2.55
+        },
+        "LLM + RAG": {
+            "json_validity": 100.0,
+            "mitre_exact_accuracy": 100.0,
+            "average_mitre_f1": 100.0,
+            "risk_consistency": "N/A",
+            "validation_rate": "N/A",
+            "average_generation_time": 2.53
+        },
+        "LLM + RAG + Risk": {
+            "json_validity": 100.0,
+            "mitre_exact_accuracy": 96.67,
+            "average_mitre_f1": 98.89,
+            "risk_consistency": 100.0,
+            "validation_rate": "N/A",
+            "average_generation_time": 3.03
+        },
+        "Full System": {
+            "json_validity": 100.0,
+            "mitre_exact_accuracy": 90.0,
+            "average_mitre_f1": 96.67,
+            "risk_consistency": 100.0,
+            "validation_rate": 100.0,
+            "average_generation_time": 3.03
+        }
+    },
+    "individual_results": {
+        "LLM Only": [
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.54
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.17
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.14
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.31
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.17
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.22
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.26
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.62
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 3.11
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.58
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 3.07
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.69
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 3.14
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.55
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.63
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.62
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.59
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.44
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.28
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.35
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.07
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.39
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 3.18
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.5
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 3.28
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.24
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 3.05
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.16
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.55
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.62
+            }
+        ],
+        "LLM + RAG": [
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.98
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.55
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.38
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.72
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.57
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.49
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.14
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.77
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.29
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.57
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.7
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.81
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.99
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.74
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.85
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 1.76
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 1.72
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.22
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.09
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.17
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.44
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.58
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.24
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.67
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.85
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.78
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 3.08
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.5
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.57
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": null,
+                "validation_passed": null,
+                "generation_time": 2.58
+            }
+        ],
+        "LLM + RAG + Risk": [
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.87
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.91
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.76
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.5
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.24
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.64
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": false,
+                "mitre_precision": 50.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 66.67,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.61
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.56
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.51
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.63
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.7
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.51
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 4.34
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.01
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 4.27
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.33
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.4
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.7
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.43
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.86
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.15
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.76
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.48
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.54
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.95
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.2
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.9
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 2.41
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.48
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": null,
+                "generation_time": 3.19
+            }
+        ],
+        "Full System": [
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.99
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.85
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.36
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.1
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.64
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.36
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": false,
+                "mitre_precision": 50.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 66.67,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.45
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.42
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.37
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.45
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.64
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.55
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.97
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": false,
+                "mitre_precision": 50.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 66.67,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 4.12
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.81
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.85
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.42
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.31
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.08
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 4.42
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.59
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.7
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": false,
+                "mitre_precision": 50.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 66.67,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.68
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.61
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.88
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.78
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 3.5
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.81
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.63
+            },
+            {
+                "json_valid": true,
+                "mitre_exact_match": true,
+                "mitre_precision": 100.0,
+                "mitre_recall": 100.0,
+                "mitre_f1": 100.0,
+                "risk_consistent": true,
+                "validation_passed": true,
+                "generation_time": 2.69
+            }
+        ]
+    }
+}

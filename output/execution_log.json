@@ -1,0 +1,7 @@
+[
+    {
+        "timestamp": "2026-10-01T12:28:30.709218",
+        "action": "Lock down the admin_account, Monitor source IP, Investigate authentication logs, Reset credentials if necessary, Enable multi-factor authentication",
+        "status": "SIMULATED"
+    }
+]

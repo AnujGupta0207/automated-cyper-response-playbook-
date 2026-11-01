@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Comparison & Scores - CyberResponse AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <div class="logo">
+        CYBER<span>RESPONSE</span> AI
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/history">History</a>
+        <a href="/compare" class="active">Model Benchmark & Scores</a>
+    </div>
+
+    <div class="status">
+        ● MULTI-LLM BENCHMARK
+    </div>
+</div>
+
+<!-- ================= MAIN CONTAINER ================= -->
+<div class="container">
+
+    <!-- PAGE HEADING -->
+    <div class="page-heading">
+        <p class="tag">LLM BENCHMARK & EVALUATION</p>
+        <h1>Multi-Model <span>Score Comparison</span></h1>
+        <p class="subtitle">
+            Comprehensive comparative evaluation of Large Language Models on cybersecurity incident response.
+            Scores measure JSON schema conformance, MITRE ATT&CK technique accuracy, deterministic risk consistency, and inference latency.
+        </p>
+    </div>
+
+    {% if comparison and comparison.leaderboard %}
+    <!-- ================= TOP HIGHLIGHT CARDS ================= -->
+    <div class="highlight-grid">
+        {% set top_model = comparison.leaderboard[0] %}
+        <div class="card stat-card highlight-top">
+            <span class="stat-badge">🥇 TOP OVERALL</span>
+            <h3>{{ top_model.model_name }}</h3>
+            <div class="stat-value">{{ top_model.composite_score }}<small>/100</small></div>
+            <p class="stat-desc">Highest composite accuracy & validation score across {{ comparison.incidents_count }} incidents.</p>
+        </div>
+
+        {% set fastest_model = comparison.leaderboard | sort(attribute='average_latency_seconds') | first %}
+        <div class="card stat-card highlight-speed">
+            <span class="stat-badge">⚡ FASTEST INFERENCE</span>
+            <h3>{{ fastest_model.model_name }}</h3>
+            <div class="stat-value">{{ fastest_model.average_latency_seconds }}<small>s</small></div>
+            <p class="stat-desc">Lowest average generation latency per defensive response playbook.</p>
+        </div>
+
+        {% set best_mitre = comparison.leaderboard | sort(attribute='mitre_average_f1', reverse=True) | first %}
+        <div class="card stat-card highlight-mitre">
+            <span class="stat-badge">🎯 BEST MITRE REASONING</span>
+            <h3>{{ best_mitre.model_name }}</h3>
+            <div class="stat-value">{{ best_mitre.mitre_average_f1 }}<small>%</small></div>
+            <p class="stat-desc">Highest F1 precision & recall matching MITRE ATT&CK tactics.</p>
+        </div>
+    </div>
+
+    <!-- ================= LEADERBOARD TABLE ================= -->
+    <div class="card full-card">
+        <div class="card-title">
+            <span>01</span>
+            <h2>Performance Leaderboard</h2>
+        </div>
+
+        <div class="table-container">
+            <table class="history-table compare-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Model</th>
+                        <th>Type</th>
+                        <th>Composite Score</th>
+                        <th>Validation Rate</th>
+                        <th>MITRE F1</th>
+                        <th>Risk Consistency</th>
+                        <th>JSON Validity</th>
+                        <th>Avg Latency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in comparison.leaderboard %}
+                    <tr class="{% if m.rank == 1 %}rank-one{% endif %}">
+                        <td class="rank-cell">
+                            {% if m.rank == 1 %}🥇 #1
+                            {% elif m.rank == 2 %}🥈 #2
+                            {% elif m.rank == 3 %}🥉 #3
+                            {% else %}#{{ m.rank }}{% endif %}
+                        </td>
+                        <td>
+                            <strong>{{ m.model_name }}</strong>
+                            <div class="sub-text"><code>{{ m.model_id }}</code></div>
+                        </td>
+                        <td>
+                            <span class="badge badge-provider">{{ m.provider | upper }}</span>
+                        </td>
+                        <td>
+                            <div class="score-pill">
+                                <strong>{{ m.composite_score }}</strong>/100
+                            </div>
+                        </td>
+                        <td>
+                            <span class="stat-number {% if m.validation_pass_rate >= 90 %}text-success{% else %}text-warn{% endif %}">
+                                {{ m.validation_pass_rate }}%
+                            </span>
+                        </td>
+                        <td>
+                            <span class="stat-number text-accent">
+                                {{ m.mitre_average_f1 }}%
+                            </span>
+                            <div class="sub-text">P: {{ m.mitre_average_precision }}% | R: {{ m.mitre_average_recall }}%</div>
+                        </td>
+                        <td>
+                            <span class="stat-number {% if m.risk_consistency_rate == 100 %}text-success{% else %}text-warn{% endif %}">
+                                {{ m.risk_consistency_rate }}%
+                            </span>
+                        </td>
+                        <td>
+                            <span class="stat-number text-success">
+                                {{ m.json_validity_rate }}%
+                            </span>
+                        </td>
+                        <td>
+                            <strong>{{ m.average_latency_seconds }}s</strong>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="report-meta">
+            Benchmark dataset size: <strong>{{ comparison.incidents_count }} incidents</strong> | Last evaluated: <strong>{{ comparison.timestamp }}</strong>
+        </div>
+    </div>
+
+    <!-- ================= METRIC COMPARISON VISUAL BARS ================= -->
+    <div class="card full-card">
+        <div class="card-title">
+            <span>02</span>
+            <h2>Side-by-Side Metric Analysis</h2>
+        </div>
+
+        <div class="comparison-bars-grid">
+            {% for m in comparison.leaderboard %}
+            <div class="model-bar-group">
+                <div class="model-bar-header">
+                    <h4>{{ m.model_name }}</h4>
+                    <span class="badge badge-score">{{ m.composite_score }}/100</span>
+                </div>
+
+                <div class="bar-metric">
+                    <div class="bar-label"><span>Composite Benchmark</span> <strong>{{ m.composite_score }}%</strong></div>
+                    <div class="progress-track"><div class="progress-fill fill-composite" style="width: {{ m.composite_score }}%;"></div></div>
+                </div>
+
+                <div class="bar-metric">
+                    <div class="bar-label"><span>Validation Pass Rate</span> <strong>{{ m.validation_pass_rate }}%</strong></div>
+                    <div class="progress-track"><div class="progress-fill fill-val" style="width: {{ m.validation_pass_rate }}%;"></div></div>
+                </div>
+
+                <div class="bar-metric">
+                    <div class="bar-label"><span>MITRE F1 Score</span> <strong>{{ m.mitre_average_f1 }}%</strong></div>
+                    <div class="progress-track"><div class="progress-fill fill-mitre" style="width: {{ m.mitre_average_f1 }}%;"></div></div>
+                </div>
+
+                <div class="bar-metric">
+                    <div class="bar-label"><span>Risk Sync Accuracy</span> <strong>{{ m.risk_consistency_rate }}%</strong></div>
+                    <div class="progress-track"><div class="progress-fill fill-risk" style="width: {{ m.risk_consistency_rate }}%;"></div></div>
+                </div>
+
+                <div class="bar-metric">
+                    <div class="bar-label"><span>Latency Efficiency</span> <strong>{{ m.average_latency_seconds }}s</strong></div>
+                    {% set max_lat = 40 %}
+                    {% set lat_pct = [100 - (m.average_latency_seconds / max_lat * 100), 10] | max %}
+                    <div class="progress-track"><div class="progress-fill fill-latency" style="width: {{ lat_pct }}%;"></div></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% else %}
+    <div class="card full-card" style="text-align: center; padding: 40px 20px;">
+        <h3>No Benchmark Scores Recorded Yet</h3>
+        <p class="subtitle" style="margin: 15px auto; max-width: 600px;">
+            Run a benchmark comparison below across the installed LLMs to calculate and visualize scores on the research dataset.
+        </p>
+    </div>
+    {% endif %}
+
+    <!-- ================= RUN BENCHMARK & MODEL REGISTRY ================= -->
+    <div class="dashboard-grid">
+
+        <!-- RUN BENCHMARK CARD -->
+        <div class="card incident-card">
+            <div class="card-title">
+                <span>03</span>
+                <h2>Run Score Benchmark</h2>
+            </div>
+
+            <form action="/run_benchmark" method="POST">
+                <div class="field" style="margin-bottom: 15px;">
+                    <label>Select Models to Benchmark:</label>
+                    <div class="checkbox-group">
+                        {% for m in models %}
+                        <label class="checkbox-item {% if not m.ready %}disabled{% endif %}">
+                            <input type="checkbox" name="models" value="{{ m.id }}" {% if m.ready %}checked{% else %}disabled{% endif %}>
+                            <span>
+                                <strong>{{ m.name }}</strong>
+                                <small>({{ m.type }}{% if not m.ready %} — {{ m.status }}{% endif %})</small>
+                            </span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="select-container" style="margin-bottom: 20px;">
+                    <label for="limit">Incidents Sample Size:</label>
+                    <select name="limit" id="limit">
+                        <option value="3">Quick Test (3 Incidents)</option>
+                        <option value="5">Standard Sample (5 Incidents)</option>
+                        <option value="10" selected>Balanced Benchmark (10 Incidents)</option>
+                        <option value="30">Full Research Dataset (All 30 Incidents)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    RUN BENCHMARK COMPARISON <span>→</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- MODEL REGISTRY CARD -->
+        <div class="card architecture-card">
+            <div class="card-title">
+                <span>04</span>
+                <h2>Model Architecture Registry</h2>
+            </div>
+
+            <div class="models-list">
+                {% for m in models %}
+                <div class="model-item {% if m.ready %}model-ready{% else %}model-offline{% endif %}">
+                    <div class="model-item-top">
+                        <strong>{{ m.name }}</strong>
+                        <span class="badge {% if m.ready %}badge-online{% else %}badge-offline{% endif %}">
+                            {{ m.status }}
+                        </span>
+                    </div>
+                    <div class="model-item-meta">
+                        <span>ID: <code>{{ m.id }}</code></span>
+                        <span>Params: {{ m.params }}</span>
+                        <span>Context: {{ m.context_window }}</span>
+                    </div>
+                    <p class="model-item-desc">{{ m.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

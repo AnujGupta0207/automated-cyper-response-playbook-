@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Analysis Result - CyberResponse AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+<div class="navbar">
+
+    <div class="logo">
+        CYBER<span>RESPONSE</span> AI
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/history">History</a>
+        <a href="/compare">Model Benchmark & Scores</a>
+    </div>
+
+    <div class="status">
+        ● ANALYSIS COMPLETE
+    </div>
+
+</div>
+
+
+<div class="container">
+
+
+    <!-- PAGE HEADING -->
+
+    <div class="page-heading">
+
+        <p class="tag">
+            INCIDENT ANALYSIS
+        </p>
+
+        <h1>
+            AI Response <span>Playbook</span>
+        </h1>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- RISK SUMMARY -->
+    <!-- ================================================= -->
+
+    <div class="risk-card">
+
+        <div>
+
+            <p>RISK SCORE</p>
+
+            <div class="risk-score">
+                {{ risk_score }}/100
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <p>RISK LEVEL</p>
+
+            <div class="risk-level">
+                {{ risk_level }}
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <p>AI MODEL</p>
+
+            <strong>
+                {{ model_used if model_used else 'Llama 3.2' }}
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <p>INCIDENT</p>
+
+            <strong>
+                {{ incident["type"] }}
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- MITRE + VALIDATION -->
+    <!-- ================================================= -->
+
+    <div class="result-grid">
+
+
+        <!-- MITRE KNOWLEDGE -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <span>01</span>
+
+                <h2>MITRE ATT&CK</h2>
+
+            </div>
+
+
+            {% for knowledge in retrieved_knowledge %}
+
+                <div class="mitre-box">
+
+                    {{ knowledge }}
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- VALIDATION -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <span>02</span>
+
+                <h2>Validation</h2>
+
+            </div>
+
+
+            {% if validation_passed %}
+
+                <div class="success-box">
+
+                    ✓ PLAYBOOK VALIDATED
+
+                </div>
+
+            {% else %}
+
+                <div class="error-box">
+
+                    ✕ VALIDATION FAILED
+
+                </div>
+
+
+                {% for error in errors %}
+
+                    <p>
+                        {{ error }}
+                    </p>
+
+                {% endfor %}
+
+            {% endif %}
+
+
+            {% if warnings %}
+
+                <div class="warning-box">
+
+                    <strong>Warnings</strong>
+
+                    {% for warning in warnings %}
+
+                        <p>
+                            {{ warning }}
+                        </p>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- DETECTED MITRE TECHNIQUES -->
+    <!-- ================================================= -->
+
+    <div class="card full-card">
+
+        <div class="card-title">
+
+            <span>03</span>
+
+            <h2>Detected MITRE Techniques</h2>
+
+        </div>
+
+
+        <div class="techniques">
+
+            {% for technique in playbook["mitre_techniques"] %}
+
+                <div class="technique">
+
+                    <strong>
+                        {{ technique["technique_id"] }}
+                    </strong>
+
+                    <span>
+                        {{ technique["technique_name"] }}
+                    </span>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- AI RESPONSE ACTIONS -->
+    <!-- ================================================= -->
+
+    <div class="card full-card">
+
+        <div class="card-title">
+
+            <span>04</span>
+
+            <h2>AI Response Actions</h2>
+
+        </div>
+
+
+        {% for action in playbook["actions"] %}
+
+            <div class="action">
+
+                <div class="action-number">
+
+                    {{ loop.index }}
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        {{ action["action"] }}
+                    </h3>
+
+                    <p>
+                        {{ action["reason"] }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- AI EXPLANATION -->
+    <!-- ================================================= -->
+
+    <div class="card full-card">
+
+        <div class="card-title">
+
+            <span>05</span>
+
+            <h2>AI Explanation</h2>
+
+        </div>
+
+
+        <div class="explanation">
+
+
+            {% if explanation is string %}
+
+                <!--
+                    If the explanation is returned
+                    as a normal string
+                -->
+
+                <p>
+                    {{ explanation }}
+                </p>
+
+
+            {% else %}
+
+                <!--
+                    If the explanation is returned
+                    as a list of factors
+                -->
+
+                {% for item in explanation %}
+
+                    <div class="explanation-item">
+
+
+                        <div class="explanation-factor">
+
+                            {{ item["factor"] }}
+
+                        </div>
+
+
+                        <div class="explanation-text">
+
+                            {{ item["explanation"] }}
+
+                        </div>
+
+
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- HUMAN APPROVAL -->
+    <!-- ================================================= -->
+
+    {% if validation_passed %}
+
+        <div class="approval-card">
+
+
+            <h2>
+                Human Approval Required
+            </h2>
+
+
+            <p>
+
+                The AI-generated playbook has passed
+                validation. Review the recommended actions
+                before simulated execution.
+
+            </p>
+
+
+            <div class="approval-buttons">
+
+
+                <!-- APPROVE -->
+
+                <form
+                    action="/approve"
+                    method="POST"
+                >
+
+                    <button
+                        class="approve-btn"
+                        type="submit"
+                    >
+
+                        ✓ APPROVE & EXECUTE
+
+                    </button>
+
+                </form>
+
+
+                <!-- REJECT -->
+
+                <form
+                    action="/reject"
+                    method="POST"
+                >
+
+                    <button
+                        class="reject-btn"
+                        type="submit"
+                    >
+
+                        ✕ REJECT
+
+                    </button>
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+    {% endif %}
+
+
+</div>
+
+</body>
+
+</html>

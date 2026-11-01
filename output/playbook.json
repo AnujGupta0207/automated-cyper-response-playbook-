@@ -1,0 +1,34 @@
+{
+    "incident_id": "INC-001",
+    "incident_type": "Brute Force Attack",
+    "risk_score": 90,
+    "risk_level": "Critical",
+    "mitre_techniques": [
+        {
+            "technique_id": "T1110",
+            "technique_name": "Brute Force"
+        }
+    ],
+    "actions": [
+        {
+            "action": "Temporarily lock or restrict the targeted account",
+            "reason": "To prevent further unauthorized access"
+        },
+        {
+            "action": "Monitor the source IP address",
+            "reason": "To identify the source of the attack"
+        },
+        {
+            "action": "Investigate authentication logs",
+            "reason": "To gather more information about the attack"
+        },
+        {
+            "action": "Reset credentials if compromise is suspected",
+            "reason": "To prevent potential further unauthorized access"
+        },
+        {
+            "action": "Enable or enforce multi-factor authentication",
+            "reason": "To prevent similar attacks in the future"
+        }
+    ]
+}

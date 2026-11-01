@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Execution - CyberResponse AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+<div class="navbar">
+
+    <div class="logo">
+        CYBER<span>RESPONSE</span> AI
+    </div>
+
+    <div class="status">
+        ● SYSTEM
+    </div>
+
+</div>
+
+
+<div class="container">
+
+
+{% if approved %}
+
+
+    <div class="execution-success">
+
+        <div class="big-check">
+            ✓
+        </div>
+
+        <p class="tag">
+            HUMAN APPROVAL RECEIVED
+        </p>
+
+        <h1>
+            Response <span>Executed</span>
+        </h1>
+
+        <p>
+            The approved cybersecurity response
+            playbook was processed through the
+            simulated SOAR execution engine.
+        </p>
+
+    </div>
+
+
+    <div class="card full-card">
+
+        <div class="card-title">
+
+            <span>01</span>
+
+            <h2>Execution Log</h2>
+
+        </div>
+
+
+        {% for item in execution_log %}
+
+            <div class="execution-item">
+
+                <div class="execution-number">
+                    {{ loop.index }}
+                </div>
+
+                <div>
+
+                    <strong>
+                        {{ item.get("action", "Action executed") }}
+                    </strong>
+
+                    <p>
+                        {{ item.get("status", "Simulated") }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+
+{% else %}
+
+
+    <div class="execution-rejected">
+
+        <div class="big-cross">
+            ✕
+        </div>
+
+        <p class="tag">
+            HUMAN DECISION
+        </p>
+
+        <h1>
+            Playbook <span>Rejected</span>
+        </h1>
+
+        <p>
+            No simulated response actions were executed.
+        </p>
+
+    </div>
+
+
+{% endif %}
+
+
+<a
+    href="/"
+    class="back-btn"
+>
+    ← Back to Dashboard
+</a>
+
+
+</div>
+
+</body>
+
+</html>

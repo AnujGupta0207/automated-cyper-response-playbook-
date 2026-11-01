@@ -1,0 +1,179 @@
+{
+    "metrics": {
+        "model_id": "gpt-4o",
+        "model_name": "GPT-4o",
+        "provider": "openai",
+        "incidents_evaluated": 10,
+        "json_validity_rate": 0.0,
+        "validation_pass_rate": 0.0,
+        "risk_consistency_rate": 0.0,
+        "mitre_exact_accuracy": 0.0,
+        "mitre_average_f1": 0.0,
+        "mitre_average_precision": 0.0,
+        "mitre_average_recall": 0.0,
+        "average_latency_seconds": 0.0,
+        "composite_score": 0.0
+    },
+    "individual_results": [
+        {
+            "incident_id": "INC-001",
+            "incident_type": "Brute Force Attack",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        },
+        {
+            "incident_id": "INC-002",
+            "incident_type": "Brute Force Attack",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        },
+        {
+            "incident_id": "INC-003",
+            "incident_type": "Brute Force Attack",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        },
+        {
+            "incident_id": "INC-004",
+            "incident_type": "Password Guessing",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        },
+        {
+            "incident_id": "INC-005",
+            "incident_type": "Password Guessing",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        },
+        {
+            "incident_id": "INC-006",
+            "incident_type": "Password Guessing",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        },
+        {
+            "incident_id": "INC-007",
+            "incident_type": "Phishing Attack",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        },
+        {
+            "incident_id": "INC-008",
+            "incident_type": "Phishing Attack",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        },
+        {
+            "incident_id": "INC-009",
+            "incident_type": "Phishing Attack",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        },
+        {
+            "incident_id": "INC-010",
+            "incident_type": "Malware Infection",
+            "model": "gpt-4o",
+            "json_valid": false,
+            "validation_passed": false,
+            "risk_consistent": false,
+            "mitre_exact_match": false,
+            "mitre_precision": 0.0,
+            "mitre_recall": 0.0,
+            "mitre_f1": 0.0,
+            "generation_time_seconds": 0.0,
+            "errors": [
+                "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+            ]
+        }
+    ]
+}

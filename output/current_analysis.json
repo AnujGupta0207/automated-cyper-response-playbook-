@@ -1,0 +1,76 @@
+{
+    "incident": {
+        "incident_id": "INC-001",
+        "type": "Brute Force Attack",
+        "severity": "High",
+        "source_ip": "192.168.1.100",
+        "target": "admin_account",
+        "failed_attempts": 150,
+        "description": "Multiple failed login attempts were detected against an administrator account.",
+        "expected_mitre_techniques": [
+            "T1110"
+        ]
+    },
+    "model_used": "llama3.2",
+    "risk_score": 90,
+    "risk_level": "Critical",
+    "retrieved_knowledge": [
+        "Technique: Brute Force\nID: T1110\nDescription: Adversaries may use brute force techniques to gain access to accounts by systematically attempting passwords or other authentication information.\nDetection: Multiple failed authentication attempts may indicate brute force activity.\nResponse: Temporarily lock or restrict the targeted account, Monitor the source IP address, Investigate authentication logs, Reset credentials if compromise is suspected, Enable or enforce multi-factor authentication",
+        "Technique: Password Guessing\nID: T1110.001\nDescription: Adversaries may attempt to gain access to accounts by repeatedly guessing passwords.\nDetection: Repeated authentication failures targeting a specific account can indicate password guessing.\nResponse: Apply account lockout policies, Monitor authentication attempts, Investigate the source IP, Reset affected credentials"
+    ],
+    "playbook": {
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "mitre_techniques": [
+            {
+                "technique_id": "T1110",
+                "technique_name": "Brute Force"
+            }
+        ],
+        "actions": [
+            {
+                "action": "Temporarily lock or restrict the targeted account",
+                "reason": "To prevent further unauthorized access"
+            },
+            {
+                "action": "Monitor the source IP address",
+                "reason": "To identify the source of the attack"
+            },
+            {
+                "action": "Investigate authentication logs",
+                "reason": "To gather more information about the attack"
+            },
+            {
+                "action": "Reset credentials if compromise is suspected",
+                "reason": "To prevent potential further unauthorized access"
+            },
+            {
+                "action": "Enable or enforce multi-factor authentication",
+                "reason": "To prevent similar attacks in the future"
+            }
+        ]
+    },
+    "validation_passed": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "explanation": [
+        {
+            "factor": "Risk Assessment",
+            "explanation": "The incident received a risk score of 90/100 and was classified as Critical risk."
+        },
+        {
+            "factor": "High Number of Failed Attempts",
+            "explanation": "150 failed login attempts indicate a strong brute force pattern."
+        },
+        {
+            "factor": "Administrator Account",
+            "explanation": "The targeted account has administrative privileges, which increases the potential impact of compromise."
+        },
+        {
+            "factor": "MITRE ATT&CK Technique",
+            "explanation": "The incident was associated with T1110 - Brute Force."
+        }
+    ]
+}

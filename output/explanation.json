@@ -1,0 +1,18 @@
+[
+    {
+        "factor": "Risk Assessment",
+        "explanation": "The incident received a risk score of 90/100 and was classified as Critical risk."
+    },
+    {
+        "factor": "High Number of Failed Attempts",
+        "explanation": "150 failed login attempts indicate a strong brute force pattern."
+    },
+    {
+        "factor": "Administrator Account",
+        "explanation": "The targeted account has administrative privileges, which increases the potential impact of compromise."
+    },
+    {
+        "factor": "MITRE ATT&CK Technique",
+        "explanation": "The incident was associated with T1110 - Brute Force."
+    }
+]

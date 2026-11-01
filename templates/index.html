@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CyberResponse AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<div class="navbar">
+
+    <div class="logo">
+        CYBER<span>RESPONSE</span> AI
+    </div>
+
+    <div class="nav-links">
+        <a href="/" class="active">Dashboard</a>
+        <a href="/history">History</a>
+        <a href="/compare">Model Benchmark & Scores</a>
+    </div>
+
+    <div class="status">
+        ● AI SYSTEM ONLINE
+    </div>
+
+</div>
+
+
+<!-- ================= MAIN CONTAINER ================= -->
+
+<div class="container">
+
+
+    <!-- ================= HERO ================= -->
+
+    <div class="hero">
+
+        <div>
+
+            <p class="tag">
+                AI-POWERED SECURITY OPERATIONS
+            </p>
+
+            <h1>
+                Automated Cybersecurity
+                <span>Incident Response</span>
+            </h1>
+
+            <p class="subtitle">
+                Analyze security incidents, assess risk,
+                retrieve MITRE ATT&CK intelligence and
+                generate validated AI response playbooks.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN GRID ================= -->
+
+    <div class="dashboard-grid">
+
+
+        <!-- ================= INCIDENT CARD ================= -->
+
+        <div class="card incident-card">
+
+            <div class="card-title">
+
+                <span>01</span>
+
+                <h2>
+                    Security Incident
+                </h2>
+
+            </div>
+
+
+            <form
+                action="/analyze"
+                method="POST"
+            >
+
+
+                <!-- INCIDENT SELECTOR -->
+
+                <div class="select-container">
+
+                    <label for="incident_id">
+                        Select Security Incident
+                    </label>
+
+                    <select
+                        name="incident_id"
+                        id="incident_id"
+                        required
+                    >
+
+                        {% for incident in incidents %}
+
+                            <option
+                                value="{{ incident['incident_id'] }}"
+                            >
+
+                                {{ incident['incident_id'] }}
+                                — 
+                                {{ incident['type'] }}
+
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- AI MODEL SELECTOR -->
+
+                <div class="select-container" style="margin-top: 15px;">
+
+                    <label for="model">
+                        Select AI Model
+                    </label>
+
+                    <select
+                        name="model"
+                        id="model"
+                    >
+
+                        {% if models %}
+                            {% for m in models %}
+                                <option
+                                    value="{{ m.id }}"
+                                    {% if m.id == 'llama3.2' %}selected{% endif %}
+                                    {% if not m.ready %}disabled{% endif %}
+                                >
+                                    {{ m.name }} — {{ m.type }}{% if not m.ready %} ({{ m.status }}){% endif %}
+                                </option>
+                            {% endfor %}
+                        {% else %}
+                            <option value="llama3.2" selected>
+                                Llama 3.2 (3B) — Local (Ollama)
+                            </option>
+                        {% endif %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- INCIDENT PREVIEW -->
+
+                <div
+                    class="incident-preview"
+                    id="incidentPreview"
+                >
+
+                    <div class="preview-title">
+                        SELECTED INCIDENT
+                    </div>
+
+                    <div class="preview-grid">
+
+                        <div class="preview-item">
+
+                            <span>
+                                INCIDENT ID
+                            </span>
+
+                            <strong id="previewId">
+                                {{ incidents[0]['incident_id'] if incidents else 'N/A' }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="preview-item">
+
+                            <span>
+                                TYPE
+                            </span>
+
+                            <strong id="previewType">
+                                {{ incidents[0]['type'] if incidents else 'N/A' }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="preview-item">
+
+                            <span>
+                                SEVERITY
+                            </span>
+
+                            <strong id="previewSeverity">
+                                {{ incidents[0]['severity'] if incidents else 'N/A' }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="preview-item">
+
+                            <span>
+                                TARGET
+                            </span>
+
+                            <strong id="previewTarget">
+                                {{ incidents[0]['target'] if incidents else 'N/A' }}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-description">
+
+                        <span>
+                            DESCRIPTION
+                        </span>
+
+                        <p id="previewDescription">
+
+                            {{ incidents[0]['description'] if incidents else 'No incident selected.' }}
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT INFORMATION -->
+
+                <div class="incident-box">
+
+
+                    <div class="field">
+
+                        <label>
+                            Available Incidents
+                        </label>
+
+                        <strong>
+                            {{ incidents|length }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Dataset
+                        </label>
+
+                        <strong>
+                            Cybersecurity Incidents
+                        </strong>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            AI Architecture
+                        </label>
+
+                        <strong>
+                            Multi-LLM Enabled
+                        </strong>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Knowledge Base
+                        </label>
+
+                        <strong>
+                            MITRE ATT&CK
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ANALYZE BUTTON -->
+
+                <button
+                    class="primary-btn"
+                    type="submit"
+                >
+
+                    ANALYZE INCIDENT
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- ================= PIPELINE CARD ================= -->
+
+        <div class="card architecture-card">
+
+
+            <div class="card-title">
+
+                <span>
+                    02
+                </span>
+
+                <h2>
+                    AI Response Pipeline
+                </h2>
+
+            </div>
+
+
+            <div class="pipeline">
+
+
+                <div class="pipeline-item">
+
+                    <b>
+                        01
+                    </b>
+
+                    <span>
+                        Risk Engine
+                    </span>
+
+                </div>
+
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <b>
+                        02
+                    </b>
+
+                    <span>
+                        RAG Retrieval
+                    </span>
+
+                </div>
+
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <b>
+                        03
+                    </b>
+
+                    <span>
+                        Llama 3.2
+                    </span>
+
+                </div>
+
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <b>
+                        04
+                    </b>
+
+                    <span>
+                        Playbook Validation
+                    </span>
+
+                </div>
+
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <b>
+                        05
+                    </b>
+
+                    <span>
+                        Human Approval
+                    </span>
+
+                </div>
+
+
+                <div class="arrow">
+                    ↓
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <b>
+                        06
+                    </b>
+
+                    <span>
+                        Simulated SOAR
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            <strong>
+                RAG
+            </strong>
+
+            <p>
+                MITRE knowledge retrieval
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <strong>
+                LLM
+            </strong>
+
+            <p>
+                Llama 3.2 generation
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <strong>
+                RISK
+            </strong>
+
+            <p>
+                Independent risk engine
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <strong>
+                VALIDATION
+            </strong>
+
+            <p>
+                AI playbook verification
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <strong>
+                HUMAN
+            </strong>
+
+            <p>
+                Human approval required
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <strong>
+                SOAR
+            </strong>
+
+            <p>
+                Simulated response execution
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <div class="dashboard-footer">
+
+        <p>
+            CYBERRESPONSE AI
+        </p>
+
+        <span>
+            AI-Assisted Cybersecurity Incident Response
+        </span>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    /*
+        Convert Flask incidents into JavaScript.
+
+        This allows the page to immediately show
+        information about the selected incident.
+    */
+
+    const incidents = {{ incidents | tojson }};
+
+
+    const incidentSelect =
+        document.getElementById("incident_id");
+
+
+    const previewId =
+        document.getElementById("previewId");
+
+
+    const previewType =
+        document.getElementById("previewType");
+
+
+    const previewSeverity =
+        document.getElementById("previewSeverity");
+
+
+    const previewTarget =
+        document.getElementById("previewTarget");
+
+
+    const previewDescription =
+        document.getElementById("previewDescription");
+
+
+
+    /*
+        Update incident information
+        whenever the user changes selection.
+    */
+
+    function updateIncidentPreview() {
+
+        const selectedId =
+            incidentSelect.value;
+
+
+        const selectedIncident =
+            incidents.find(
+                incident =>
+                    incident.incident_id === selectedId
+            );
+
+
+        if (!selectedIncident) {
+
+            return;
+
+        }
+
+
+        previewId.textContent =
+            selectedIncident.incident_id;
+
+
+        previewType.textContent =
+            selectedIncident.type;
+
+
+        previewSeverity.textContent =
+            selectedIncident.severity;
+
+
+        previewTarget.textContent =
+            selectedIncident.target;
+
+
+        previewDescription.textContent =
+            selectedIncident.description;
+
+    }
+
+
+
+    /*
+        Run when user changes the dropdown.
+    */
+
+    incidentSelect.addEventListener(
+        "change",
+        updateIncidentPreview
+    );
+
+
+
+    /*
+        Show the first incident
+        when the page initially loads.
+    */
+
+    updateIncidentPreview();
+
+
+</script>
+
+
+</body>
+
+</html>

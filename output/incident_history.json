@@ -1,0 +1,441 @@
+[
+    {
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "status": "EXECUTED",
+        "timestamp": "2026-09-24 02:55:23",
+        "updated_at": "2026-09-24 02:55:28"
+    },
+    {
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "status": "REJECTED",
+        "timestamp": "2026-09-24 02:55:38",
+        "updated_at": "2026-09-24 02:55:40"
+    },
+    {
+        "incident_id": "INC-026",
+        "incident_type": "Data Exfiltration",
+        "risk_score": 40,
+        "risk_level": "Medium",
+        "status": "EXECUTED",
+        "timestamp": "2026-09-24 02:59:55",
+        "updated_at": "2026-09-24 03:00:01"
+    },
+    {
+        "incident_id": "INC-012",
+        "incident_type": "Malware Infection",
+        "risk_score": 25,
+        "risk_level": "Medium",
+        "status": "REJECTED",
+        "timestamp": "2026-09-24 03:00:13",
+        "updated_at": "2026-09-24 03:00:19"
+    },
+    {
+        "history_id": 5,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 5,
+        "validation_status": "PASSED",
+        "human_decision": "APPROVED",
+        "execution_status": "EXECUTED",
+        "timestamp": "2026-09-24 03:04:46"
+    },
+    {
+        "history_id": 6,
+        "incident_id": "INC-008",
+        "incident_type": "Phishing Attack",
+        "severity": "Medium",
+        "risk_score": 25,
+        "risk_level": "Medium",
+        "mitre_techniques": [
+            "T1566"
+        ],
+        "action_count": 6,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-09-24 11:18:41"
+    },
+    {
+        "history_id": 7,
+        "incident_id": "INC-008",
+        "incident_type": "Phishing Attack",
+        "severity": "Medium",
+        "risk_score": 25,
+        "risk_level": "Medium",
+        "mitre_techniques": [
+            "T1566"
+        ],
+        "action_count": 6,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-09-24 11:38:28"
+    },
+    {
+        "history_id": 8,
+        "incident_id": "INC-010",
+        "incident_type": "Malware Infection",
+        "severity": "Critical",
+        "risk_score": 50,
+        "risk_level": "High",
+        "mitre_techniques": [
+            "T1204.002"
+        ],
+        "action_count": 4,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-09-24 11:38:46"
+    },
+    {
+        "history_id": 9,
+        "incident_id": "INC-010",
+        "incident_type": "Malware Infection",
+        "severity": "Critical",
+        "risk_score": 50,
+        "risk_level": "High",
+        "mitre_techniques": [
+            "T1204.002"
+        ],
+        "action_count": 8,
+        "validation_status": "PASSED",
+        "human_decision": "APPROVED",
+        "execution_status": "EXECUTED",
+        "timestamp": "2026-09-24 11:38:50"
+    },
+    {
+        "history_id": 10,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 3,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 11:47:12"
+    },
+    {
+        "history_id": 11,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 1,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 11:47:44"
+    },
+    {
+        "history_id": 12,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "llama3.2",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 5,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 11:48:11"
+    },
+    {
+        "history_id": 13,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "gemma2:2b",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 5,
+        "validation_status": "PASSED",
+        "human_decision": "APPROVED",
+        "execution_status": "EXECUTED",
+        "timestamp": "2026-10-01 11:48:44"
+    },
+    {
+        "history_id": 14,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "llama3.2",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 5,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 11:49:24"
+    },
+    {
+        "history_id": 15,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 1,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 11:50:02"
+    },
+    {
+        "history_id": 16,
+        "incident_id": "INC-007",
+        "incident_type": "Phishing Attack",
+        "severity": "High",
+        "risk_score": 40,
+        "risk_level": "Medium",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1566"
+        ],
+        "action_count": 1,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 11:54:03"
+    },
+    {
+        "history_id": 17,
+        "incident_id": "INC-007",
+        "incident_type": "Phishing Attack",
+        "severity": "High",
+        "risk_score": 40,
+        "risk_level": "Medium",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1566"
+        ],
+        "action_count": 1,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 11:54:34"
+    },
+    {
+        "history_id": 18,
+        "incident_id": "INC-007",
+        "incident_type": "Phishing Attack",
+        "severity": "High",
+        "risk_score": 40,
+        "risk_level": "Medium",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1566"
+        ],
+        "action_count": 1,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 11:54:40"
+    },
+    {
+        "history_id": 19,
+        "incident_id": "INC-007",
+        "incident_type": "Phishing Attack",
+        "severity": "High",
+        "risk_score": 40,
+        "risk_level": "Medium",
+        "model_used": "llama3.2",
+        "mitre_techniques": [
+            "T1566"
+        ],
+        "action_count": 4,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 11:55:19"
+    },
+    {
+        "history_id": 20,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "llama3.2",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 5,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 12:09:51"
+    },
+    {
+        "history_id": 21,
+        "incident_id": "INC-007",
+        "incident_type": "Phishing Attack",
+        "severity": "High",
+        "risk_score": 40,
+        "risk_level": "Medium",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1566"
+        ],
+        "action_count": 1,
+        "validation_status": "PASSED",
+        "human_decision": "APPROVED",
+        "execution_status": "EXECUTED",
+        "timestamp": "2026-10-01 12:13:58"
+    },
+    {
+        "history_id": 22,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "llama3.2",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 5,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 12:15:32"
+    },
+    {
+        "history_id": 23,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 1,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 12:15:49"
+    },
+    {
+        "history_id": 24,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "llama3.2",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 5,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 12:18:17"
+    },
+    {
+        "history_id": 25,
+        "incident_id": "INC-003",
+        "incident_type": "Brute Force Attack",
+        "severity": "Critical",
+        "risk_score": 100,
+        "risk_level": "Critical",
+        "model_used": "llama3.2",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 5,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 12:19:30"
+    },
+    {
+        "history_id": 26,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 1,
+        "validation_status": "PASSED",
+        "human_decision": "APPROVED",
+        "execution_status": "EXECUTED",
+        "timestamp": "2026-10-01 12:28:17"
+    },
+    {
+        "history_id": 27,
+        "incident_id": "INC-012",
+        "incident_type": "Malware Infection",
+        "severity": "Medium",
+        "risk_score": 25,
+        "risk_level": "Medium",
+        "model_used": "qwen2.5:1.5b",
+        "mitre_techniques": [
+            "T1204.002"
+        ],
+        "action_count": 1,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-10-01 12:29:52"
+    },
+    {
+        "history_id": 28,
+        "incident_id": "INC-001",
+        "incident_type": "Brute Force Attack",
+        "severity": "High",
+        "risk_score": 90,
+        "risk_level": "Critical",
+        "model_used": "llama3.2",
+        "mitre_techniques": [
+            "T1110"
+        ],
+        "action_count": 5,
+        "validation_status": "PASSED",
+        "human_decision": "PENDING",
+        "execution_status": "NOT EXECUTED",
+        "timestamp": "2026-11-02 02:58:29"
+    }
+]

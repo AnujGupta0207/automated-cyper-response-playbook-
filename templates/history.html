@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Incident History - CyberResponse AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+    <div class="logo">
+        CYBER<span>RESPONSE</span> AI
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/history" class="active">History</a>
+        <a href="/compare">Model Benchmark & Scores</a>
+    </div>
+
+    <div class="status">
+        ● INCIDENT HISTORY
+    </div>
+
+</div>
+
+
+<div class="container">
+
+
+    <div class="page-heading">
+
+        <p class="tag">
+            SECURITY OPERATIONS CENTER
+        </p>
+
+        <h1>
+            Incident <span>History</span>
+        </h1>
+
+        <p class="subtitle">
+            Historical record of analyzed cybersecurity
+            incidents and AI-generated response playbooks.
+        </p>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="features">
+
+        <div class="feature">
+
+            <strong>
+                {{ history|length }}
+            </strong>
+
+            <p>
+                Total Incidents
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <strong>
+                {{ history|selectattr("human_decision", "equalto", "APPROVED")|list|length }}
+            </strong>
+
+            <p>
+                Approved
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <strong>
+                {{ history|selectattr("human_decision", "equalto", "REJECTED")|list|length }}
+            </strong>
+
+            <p>
+                Rejected
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <strong>
+                {{ history|selectattr("execution_status", "equalto", "EXECUTED")|list|length }}
+            </strong>
+
+            <p>
+                Executed
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- HISTORY -->
+
+    <div class="card full-card">
+
+        <div class="card-title">
+
+            <span>
+                01
+            </span>
+
+            <h2>
+                Analysis Records
+            </h2>
+
+        </div>
+
+
+        {% if history %}
+
+
+            {% for record in history %}
+
+                <div class="history-item">
+
+
+                    <div class="history-header">
+
+                        <div>
+
+                            <strong>
+                                {{ record["incident_id"] }}
+                            </strong>
+
+                            <span>
+                                {{ record["incident_type"] }}
+                            </span>
+
+                        </div>
+
+
+                        <div class="history-time">
+
+                            {{ record["timestamp"] }}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="history-details">
+
+
+                        <div class="history-stat">
+
+                            <span>
+                                RISK
+                            </span>
+
+                            <strong>
+                                {{ record["risk_score"] }}/100
+                            </strong>
+
+                        </div>
+
+
+                        <div class="history-stat">
+
+                            <span>
+                                LEVEL
+                            </span>
+
+                            <strong>
+                                {{ record["risk_level"] }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="history-stat">
+
+                            <span>
+                                SEVERITY
+                            </span>
+
+                            <strong>
+                                {{ record["severity"] }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="history-stat">
+
+                            <span>
+                                ACTIONS
+                            </span>
+
+                            <strong>
+                                {{ record["action_count"] }}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="history-stat">
+
+                            <span>
+                                MODEL
+                            </span>
+
+                            <strong>
+                                {{ record["model_used"] if record.get("model_used") else "llama3.2" }}
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="history-status">
+
+
+                        <div>
+
+                            <span>
+                                VALIDATION
+                            </span>
+
+                            <strong>
+                                {{ record["validation_status"] }}
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                HUMAN DECISION
+                            </span>
+
+                            <strong>
+                                {{ record["human_decision"] }}
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                EXECUTION
+                            </span>
+
+                            <strong>
+                                {{ record["execution_status"] }}
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="history-techniques">
+
+                        <span>
+                            MITRE:
+                        </span>
+
+                        {% for technique in record["mitre_techniques"] %}
+
+                            <b>
+                                {{ technique }}
+                            </b>
+
+                        {% endfor %}
+
+                    </div>
+
+
+                </div>
+
+            {% endfor %}
+
+
+        {% else %}
+
+            <div class="empty-history">
+
+                <h3>
+                    No Incident History
+                </h3>
+
+                <p>
+                    Analyze an incident to create
+                    your first history record.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+
+    </div>
+
+
+    <!-- BACK -->
+
+    <div class="dashboard-footer">
+
+        <a href="/">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
